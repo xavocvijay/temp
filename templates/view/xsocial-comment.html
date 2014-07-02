@@ -1,0 +1,29 @@
+<div id="<?$_name?>" class=' <?$class?>'>
+	<div class="row" style="margin-top:3px;">
+		<div class='col-md-2'>
+
+			<div class="img-thumbnail" ><?profile_pic?>profile_pic<?/profile_pic?>
+			</div>			
+		</div>
+		<div class='col-md-10'>
+			<div class='row'>
+				<div class='col-md-12'><span><b><?from_member?>commentor_name<?/from_member?></b></span>&nbsp;<?$activity_detail?>
+				</div>
+				<div><img src='<?$img?>' width="100px" height="100px"/></div>
+			</div>
+		
+			<div class='row'>
+				<div class='col-md-8'>
+					<?like_button?>
+							<a href='#likeAction' id='like_for_<?$activity_id?>' onclick='$(this).univ().like_me(<?$activity_id?>)'><?like_status?>Oops<?/like_status?></a>
+							<?/like_button?>
+				</div>
+			<?edit_delete_block?>
+				<div class='col-md-2'><?edit?>Edit<?/edit?></div>
+				<div class='col-md-2'><?delete?>Delete<?/delete?></div>
+			<?/edit_delete_block?>
+			</div>
+		</div>
+	</div>
+	</div>
+

@@ -1,0 +1,49 @@
+<style>
+	.status{
+		box-shadow:0 2px 30px 0 rgba(0, 0, 0, 0.4);
+		transition:height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, min-height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+		animation:0.5s ease-out 0s normal none 1;
+		padding:30px 30px 20px;
+		z-index:4px;
+	}
+
+	a{
+	text-decoration:none;
+	}
+
+</style>
+<div id="<?$_name?>" class="row rowmargin">
+	<div class="col-md-12 status" >
+		<?$Content?>
+
+		<a id="photo" title="Share Photo" data-toggle="tooltip"><span class="	glyphicon glyphicon-camera" ></span>
+		</a>
+
+		<a id="video" title="Share Video" data-toggle="tooltip"><span class="	glyphicon glyphicon-facetime-video"></span>
+		</a>
+
+	</div>
+</div>	
+
+<!-- //TODO FOR ADDING PHOTO BUTTON AND VIDEO -->
+<<<<<<< HEAD
+=======
+<script type="text/javascript"> 
+
+	$(document).ready(function(){
+		$("#a6b94fb3___status_form_activity_detail").css("max-height","60px");
+		// $(".atk-form-row-upload,.atk-form-row-line").hide();
+
+		$("#a6b94fb3___status_form_activity_detail").before("");
+
+		$("#photo").click(function(){
+			$(".atk-form-row-upload").toggle();
+		});
+		$('#photo').tooltip();
+		$('#video').tooltip();
+		$("#video").click(function(){
+			$(".atk-form-row-line").toggle();
+		});
+	});
+</script>
+>>>>>>> khushbuwork

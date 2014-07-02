@@ -1,0 +1,29 @@
+<style>
+	.status{
+		box-shadow:0 2px 30px 0 rgba(153, 93, 44, 0.4);
+		transition:height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, min-height 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+		animation:0.5s ease-out 0s normal none 1;
+		padding:30px 30px 20px;
+		z-index:4px;
+		background-color: white;
+	}
+
+	a{
+	text-decoration:none;
+	margin-right:0.5em;
+	cursor:pointer;	
+	}
+
+</style>
+<div id="<?$_name?>" class="row rsowmargin">
+	<div class="col-md-12 status" >
+		<?$Content?>
+
+		<a id="status-bar-photo-btn" title="Share Photo" data-toggle="tooltip"><span class="glyphicon glyphicon-camera" onclick="$(this).univ().hide_photo_video_field_of_status()"></span>
+		</a>
+
+		<a id="status-bar-video-btn" title="Share Video" data-toggle="tooltip"><span class="glyphicon glyphicon-facetime-video" onclick="$(this).univ().hide_photo_video_field_of_status()"></span>
+		</a>
+
+	</div>
+</div>	

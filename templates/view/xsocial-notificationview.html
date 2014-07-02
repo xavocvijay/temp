@@ -1,0 +1,33 @@
+<style>
+	.name{
+		text-transform: capitalize;
+	}
+	ul li{
+		list-style-type: none;
+	}
+	.notify{
+
+	}
+</style>
+
+<div id='<?$_name?>'>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+	    	<a href="#">
+		    <span class="badge pull-right"><?button?><?/button?></span>
+	      	<div class="row">
+	      	<div class="col-md-10 notify">
+	      		<?$Content?>
+	      	</div>
+	      </div>
+	    </a>
+	  </div>
+	 </div>
+	</div> 	
+
+<script>
+	$(document).ready(function(){
+		//$(".notify").hide();
+	});
+</script>

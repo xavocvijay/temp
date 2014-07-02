@@ -1,0 +1,73 @@
+.activity .profile_pic {
+	background-color: red;
+	width: 50px;
+	height: 50px;
+}
+
+.profilecover img{
+	width:1200px;
+	height: 300px;
+}
+.profile_pic{
+	width:100%;
+	max-width:100%;
+	height:auto;
+}
+
+.profile_name{
+	margin-top:1em;
+	}
+
+.dashboard_bgcolor{
+	background-color:rgb(0,96,147);
+}
+
+.edit_profile_pic_btn {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+.profile {
+	color:white;
+}
+.rowmargin{
+	padding:5px;
+}
+.profilename{
+	color:rgb(0, 96, 147);
+	font-size:1em;
+}
+
+/*Status bar css*/
+.status-bar textarea{
+	height:50px;
+}
+
+.status-bar div.atk-form-row-upload  {
+	display:none;
+}
+.status-bar div.atk-form-row-line   {
+	display:none;
+}
+
+/*.status-video-url{
+	display:none;	
+}*/
+/*
+.status-bar input[type=file] {
+	display:none;	
+}*/
+
+/*a[id*='id_pattern'] selecting substring*/
+
+
+/* topmenu bar csssssssssss*/
+
+/* TODO HOME PAGE ADD side bar*/
+.home-page-right{	
+	position:fixed;
+		
+}
+/*.home-page-right *{
+	position:fixed;
+}*/

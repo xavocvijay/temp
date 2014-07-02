@@ -1,0 +1,37 @@
+<style>
+	.profile-pic {
+		width:140px;
+		max-width:140px; 
+		height:140px;
+		max-height: 140px;
+
+	}
+	.img{
+		margin:0 auto 0 auto;
+	}
+	.profile-pic-thumbnail{
+		width:140px;
+		height: 140px;
+		margin:0 auto 0 auto;
+	}
+	.row{
+		margin:0px;
+	}
+	.profilename{
+		text-transform: capitalize;
+	}
+</style>
+
+<div id="<?$_name?>">
+	<div class="row profile" >
+		<div class="col-md-12">
+			<div class="profile-pic-thumbnail">
+				<img class="img-circle img-thumbnail profile-pic" src='<?member_pic?>member_pic<?/member_pic?>'/>
+			</div>
+			<div class="profilename text-center">
+			<b><?member_name?>Member_name<?/member_name?></b>			
+			</div>
+		</div>
+		<!-- <div><button>Edit Profile</button> <?$Content?> </div> -->
+	</div>
+</div>

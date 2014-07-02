@@ -1,0 +1,234 @@
+
+    <!-- Custom styles for this template -->
+<style>
+#vcard {
+  margin: 0 auto;
+  width: auto;
+  height: 300px;
+  background-image:url('<?$timeline_pic?>');
+  /*background-color:#31A66C;*/
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px rgba(0,0,0, .3);
+  background-size:100% auto;
+  background-repeat:no-repeat;
+  position: relative;
+}
+#card-content {
+  width: auto;
+  float: left;
+  height: 100%;
+  
+}
+#profile {
+  padding-top: 9%;
+  min-height: 200px;
+  width:100%;
+  position: absolute;
+  bottom:0;
+  text-align: center;
+  overflow: hidden;
+}
+
+span.avatar span.icon{
+  display: inline-block;
+  color: #414141;
+  font-size: 72px;
+  line-height: 100px;<?$timeline_pic?>
+  background: #46af7b;
+  border: solid 3px rgba(255,255,255, .2);
+  overflow: hidden;
+  padding-top: 1px;
+  width: 90px;
+  height: 90px;
+  border-radius: 46px;
+}
+span.avatar >img{
+  margin-left:0px;
+ /* height:150px;
+  width:150px*/;
+  padding-left:0px;
+}
+span.info {
+  padding-top: 10px;
+  display: block;
+  font-family: Exo;
+  font-size: 18px;
+  color: rgba(255,255,255, .7);
+  font-weight: normal;
+  text-shadow: 1px 1px 3px rgba(0,0,0,.3);
+}
+.member-name{
+  text-transform: capitalize;
+  margin-top:2%;
+}
+
+.profilepic{
+  padding:0;
+  margin:0;
+  max-height:140px;
+  min-height:140px;
+  height: 140px;
+  width:140px;
+  max-width: 140px;
+  overflow: hidden;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+     -moz-box-shadow: 0 8px 6px -6px black;
+          box-shadow: 0 8px 6px -6px black;
+
+  border:2px solid #e6e6e6;        
+}
+  .cover-btn-margin{
+    margin-top: -3%;
+  }
+  .cover-btn{
+    display:none;
+  }
+  .cover-btn-hover{
+    display: block;
+  }
+
+</style>
+
+     <!-- Including Jcrop css and js -->
+<link type="text/css" href="epan-components/xsocialApp/templates/css/Jcrop.css" rel="stylesheet" />
+<script src="epan-components/xsocialApp/templates/js/Jcrop.js"></script>
+
+
+<div id ="<?$_name?>" class="<?$class?>">
+<?$Content?>
+<a id="timeline">
+  <div id="vcard">
+    <div id="card-content">
+        <div id="profile">
+          <span class="profilepic thumbnail avatar pull-left col-md-2">
+          <!-- <img id="imgbadge" src="<?$timeline_pic?>"/> -->
+            <?$profile_pic?>
+          </span>
+        </div>
+    </div>
+  </div>
+
+          <?btn_block?>
+            <div class="row">
+                <div class="col-md-4 text-left member-name">
+                  <h2><?$member_name?></h2>
+                </div>
+                
+                <div class="col-md-8 text-center cover-btn-margin">
+                  <div id="coverbtn" class="row cover-btn">
+                    <div class="col-md-2 text-left">
+                      <?$profile_edit?>
+                    </div>
+                    <div class="col-md-2">
+                        <?$crop_pic_btn?>
+                    </div>
+                    <div class="col-md-4">
+                      <?$friend_request_btn?>
+                    </div>
+                    <div class="col-md-2">
+                      <?$edit_btn?>
+                    </div>
+                    <div class="col-md-2 cover_crop_btn " data-toggle="modal" data-target="#myModal">
+                      <?$crop_btn?>
+                    </div>                  
+                  </div>
+                </div>
+                <!-- <div class="col-md-3"></div>
+            		<div class="col-md-3 text-right"></div> -->
+                
+              </div>
+            	<?/btn_block?>
+</div>
+</a>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="width:85%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Crop Cover Photo</h4>
+      </div>
+      <div class="modal-body">
+        <div class="crop_cover_pic">
+          <img width="1162px" id="target" src="<?$timeline_pic?>" />
+          <form id='crop_form' onsubmit="javascript: return false;" method="post" action="?epan=web&subpage=xsocial-crop">
+              <input id="x" name="x" value="" type="hidden"/>
+              <input id="y" name="y" value="" type="hidden"/>
+              <input id="w" name="w" value="" type="hidden"/>
+              <input id="h" name="h" value="" type="hidden"/>
+          </form>
+        </div>        
+      </div>
+      <div class="modal-footer">
+        <input type="button" class="btn btn-primary" value="Crop Image" onclick='javascript:submit_image()'>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+function submit_image(){
+  $.ajax({
+    url: 'index.php?epan=web&subpage=xsocial-crop&cut_page=1&crop_image=1',
+    data: $('#crop_form').serialize(),
+    success: function(res){
+    $('#myModal').modal('hide');
+
+      // document.getElementById('imgbadge').innerHTML = location.reload(true);
+      location.reload();  
+      eval(res);      
+    },
+    error: function(res){
+    }
+  });
+
+}
+  $(document).ready(function(){
+    $("#timeline").mouseover(function(){
+      $("#coverbtn").removeClass('cover-btn');
+      $("#coverbtn").addClass('cover-btn-hover');
+    });
+    $("#timeline").mouseout(function(){
+      $("#coverbtn").removeClass('cover-btn-hover');
+      $("#coverbtn").addClass('cover-btn');
+    });
+    // $( ".crop_cover_pic" ).hide();
+  });
+
+  jQuery(function($) {
+        $('#target').Jcrop({
+          onSelect: showCoords,
+          onChange: showCoords,
+          aspectRatio: 3.88 / 1,
+          keySupport: false
+
+        });
+    });
+
+  function showCoords(c)
+    {
+      // variables can be accessed here as
+      // c.x, c.y, c.x2, c.y2, c.w, c.h
+      $('#x').val(c.x);
+      $('#y').val(c.y);
+      $('#h').val(c.h);
+      $('#w').val(c.w);
+    };
+
+  // function runEffect(){
+  //   $( ".crop_pic" ).effect( slide, options, 500);
+  // };   
+
+  // $( ".cover_crop_btn" ).click(function() {
+  //   $( ".crop_cover_pic" ).effect( 'fade');
+  //   // $( ".crop_cover_pic" ).toggle();
+  //   // runEffect();
+  //   return false;
+  // });    
+</script>
+
+

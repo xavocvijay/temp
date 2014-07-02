@@ -1,0 +1,65 @@
+<style>
+	.friendlist-img > img {
+		width:3em;
+		max-width:100;
+		height:3em;
+		float:left;
+		padding-right:0.1em;
+	}
+	.friendlist-img{
+		width:3.2em%;
+		float:left;
+		padding:0.1em 0 0.1em 0;
+		border:1px solid white;
+	}
+	#picdiv{
+		display:none;
+		position:absolute;
+		background-color:#f2f2f2;
+	}
+</style>
+
+<div id='<?$_name?>'>
+	<?$Content?>
+	<div class="panel panel-primary">
+  		<div class="panel-heading">
+    		<h3 class="panel-title"><a href='index.php?epan=web&subpage=xsocial-friends' target='_blank'>Friends</a><span class="badge badge-info"><?$count?></span>
+    		</h3>
+  		</div>	
+ 		<div class="panel-body">
+			<?rows?>
+				<?row?>
+			
+				<a href='<?$url?>'>
+					<div  class="friendlist-img">				
+						<img id="friend-pic" title="<?name?>name come here<?/name?>" data-toggle="tooltip" class="pic" data-placement="bottom"  src='<?profile_pic?> Profile Pic <?/profile_pic?>' />	
+					</div>
+					<!-- <div id="picdiv">				
+					</div> -->
+				</a>
+		<?/row?>
+		<?/rows?>			
+  		</div>
+	</div>
+	
+		</div>
+
+<!-- 
+<script type="text/javascript">
+
+$('.pic').mousemove(function (e){
+	var hovertext=$(this).attr('hovertext');
+	$('#picdiv').text(hovertext).show();
+	$('#picdiv').css('left',e.clientX+10).css('top',e.clientY);
+}).mouseout(function(){
+	$('#picdiv').hide();
+});
+
+</script>	 -->
+
+<script type="text/javascript"> 
+
+	$(document).ready(function(){
+		$('#friend-pic').tooltip();
+	});
+</script>

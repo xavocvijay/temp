@@ -1,0 +1,106 @@
+<style>
+	.associate-img,.associate-video{
+		max-width:100%;
+		width:auto;
+	}
+	.associate-img > img{
+		width:auto;
+		max-width: 100%;
+	}
+
+</style>
+
+<div id='activity_view_<?$activity_id?>' class='well well-sm <?$class?>'>
+	<div class="row">
+		
+		<div class="col-md-2">
+			<?profile_pic?><?/profile_pic?>
+		</div>
+
+		<div class="col-md-10 pull-left">
+			<div class="row">
+				<div class="col-md-6 profilename">
+					<b><?activity?><?/activity?></b>
+				</div>
+				<?edit_delete_block?>
+				<div class="col-md-3 profilename">
+					<b><?edit?>edit<?/edit?>
+					</b>
+				</div>
+				<div class="col-md-3 profilename">
+					<b><?delete_button?>
+							<a href='#removeAction' id='remove_for_<?$activity_id?>' onclick='$(this).univ().remove_me(<?$activity_id?>)'>Delete</a>
+							<?/delete_button?>
+					</b>
+				</div>
+				<?/edit_delete_block?>
+			</div>
+
+			
+			<div class="row">
+				<div class="col-md-12 text-success">
+					<?activity_detail?><?/activity_detail?>
+					<div class="associate-img" >
+						<?associated_pic_or_video_block?>
+					</div>
+				</div>
+			</div>
+				
+			<div class="row">
+				<div class="col-md-12 associate-img">
+					<img src="<?$img?>">
+					<?video_url?><?/video_url?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<?video_url?><?/video_url?>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 associate-video">
+					<?video_url?><?/video_url?>
+				</div>
+			</div>
+			<?/associated_pic_or_video_block?>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="row">
+						
+						<div class="col-md-1 glyphicon" >
+						</div>
+						<div>
+							<?like_button?>
+							<a href='#likeAction' id='like_for_<?$activity_id?>' onclick='$(this).univ().like_me(<?$activity_id?>)'><?like_status?>Oops<?/like_status?></a>
+							<?/like_button?>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-1 glyphicon glyphicon-share">
+						</div>
+						<div>
+							<?share_button1?>
+							<a href='#' onclick="$(this).univ().share_me(<?$activity_id?>);">
+								Share
+							</a>
+							<?/share_button1?>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4"><?activity_like_list?>activity_like_list<?/activity_like_list?></div>
+				<div class="col-md-4"><?activity_share_list?>activity_share_list<?/activity_share_list?></div>
+			</div>
+			
+			<div class="row" style="margin-top:3px;">
+				<div class="col-md-12"><?$comments_block?></div>
+			</div>
+		</div>
+	</div>
+	
+</div>

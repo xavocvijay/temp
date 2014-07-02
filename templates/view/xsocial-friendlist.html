@@ -1,0 +1,29 @@
+<style>
+.pic{
+	max-width:150px;
+	max-height: 150px;
+}
+.pic >img{
+	width:auto;
+	max-width:100%;
+}
+</style>
+
+<div id='<?$_name?>' class="freinds" >
+	<?$Content?>
+	<div class="row">
+		<div class="col-sm-1 thumbnail pic">
+			<img src="<?profile_pic?> Profile Pic <?/profile_pic?>" />
+		</div >
+		<div class="col-sm-7">
+				<div>
+					<?member_name?>name come here<?/member_name?>				
+				</div>
+				<div>	
+					<?FriendsBtn?>	<p>Button Come here</p><?/FriendsBtn?>			
+				</div>		
+		</div>
+	</div>
+
+</div>
+

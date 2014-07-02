@@ -1,0 +1,162 @@
+<style>
+.atk-buttons{
+}
+	.topbar-bg{
+		background-color:#006093;
+		/*#3b6c36;*/
+	}
+	.navbar-fixed-top{
+		z-index:10 !important;
+	}
+	.topbar-logo >img{
+		max-width:100%;
+		width:auto;
+	}
+	nav ul ul {
+		display: none;
+	}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+
+	nav ul{
+		 
+		padding: 0 20px;
+		border-radius: 10px;  
+		list-style: none;
+		position: relative;
+		display: inline-table;
+		}
+
+	nav ul:after {
+		content: ""; 
+		clear: both; 
+		display: block;
+	}
+
+	nav ul li {
+	margin-right:1px;
+	float: left;
+
+	}
+	nav ul li span{
+		color:white;
+	}
+	.glyphicon-user{
+		background-color:url('epan/web/banner1.jpg'); 
+	}
+	.other{
+		color:white;
+		font-size:25px;
+		margin-top:0px;
+		padding:0px;
+	}
+	.logout{
+		background-color:white;
+	}
+	.friends{
+		background-size: 100%;
+		min-width:100%;
+	}
+	.function-icon{
+		width:4em;
+		padding:0;
+	}
+	.default-height{
+		min-height:5.5em;
+
+		margin-right:0.3em;
+	}
+	.default-fontsize{
+		font-size:2em;
+		
+	}
+
+</style>
+
+
+<div id="<?$_name?>" >
+	<?$Content?>
+
+	<div class="topbar-bg row">
+		<!-- company logo -->
+		<div class="topbar-logo col-sm-2">
+			<img src="epans/web/logo_buddy_trader.png" alt="company-logo"/>
+		</div>	
+
+		<div class="col-sm-4">
+			<!-- <form  role="search" >
+		        <div class="form-group"> -->
+		        	<!-- <input type="text" class="form-control" placeholder="Search Friends Here"> -->
+					<?search?>Search Friend <?/search?>
+		        <!-- </div>
+		    </form>
+ -->			
+		</div>
+
+		<div class="col-sm-3">
+			<nav>	
+				<ul >
+					<li >
+					<div style="width:100%;" class="text-center">
+						<span data-toggle="tooltip" data-placement="bottom" class="badge function-icon default-height" title="Buddy Request"><img src="epans/web/social/friend_request.png" class="glyphicon friends function-icon"><?friends?><?/friends?></span>
+						<div><small>Buddy Req.</small></div>	
+					</div>
+		  			</li>
+
+					<li >
+					<div style="width:100%" class="text-center">
+						<span data-toggle="tooltip" data-placement="bottom" class="badge glyphicon function-icon default-height" title="Notification"><img src="epans/web/social/friends.png" class="glyphicon friends function-icon"><?notification?>  <?/notification?></span>
+						<div><small>Notify</small>
+						</div>
+					</div>	
+		  			</li>
+
+					<li >
+					<div>
+						<div style="width:100%" class="text-center">
+						<span title="Reward Points" data-toggle="tooltip" data-placement="bottom" class="badge function-icon default-height" ><img src="epans/web/social/coins.png" class="glyphicon friends function-icon"/><?coin?>0<?/coin?></span>
+						</div>
+						<div class="text-center"><small>
+						RPS</small>
+						</div>
+		  			</div>
+		  			</li>
+
+					<li>	
+					<div>
+						<div style="width:100%" class="text-center">
+						<span title="Message" data-toggle="tooltip" data-placement="bottom" class="badge function-icon default-height"><img src="epans/web/social/message.png" class="glyphicon friends function-icon">
+						<div style="margin-top:10%;">	
+						<?message_count?>0<?/message_count?>
+						</div>
+						</span>
+						<div><small>Message</small>
+						</div>
+					</div>
+						
+					</div>			
+					</li>
+				</ul>
+			</nav>
+		</div>		
+
+		<div class="col-sm-3 default-fontsize text-right" style="padding-top:3%;">
+			<div class="text-left" style="text-transform:capitalize;font-size:0.5em;">
+				<?$member_login?>
+			</div>
+			 <span style="display:none;"> 
+			  <?$setting?>
+			  </span>
+	    	<a href="?epan=web&subpage=xsocial-dashboard" title="Home" data-toggle="tooltip" data-placement="bottom" style="text-decoration:none;color:white;"><i class="glyphicon glyphicon-home "></i></a>
+						
+			<a href="?epan=web&subpage=xsocial-profile" title="Profile" data-toggle="tooltip" data-placement="bottom" style="text-decoration:none;color:white;"><i class="glyphicon glyphicon-user"></i></a>
+			
+			<!-- <img class="glyphicon glyphicon-log-out logout"/> -->
+			<?logout?>logout<?/logout?>
+			</div>
+		</div>	
+	</div>	
+
+</div>

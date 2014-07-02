@@ -1,0 +1,61 @@
+<style>
+.name{
+	text-transform:capitalize;
+	margin:-1% 0 0 1%;
+}
+.row{
+	margin:0px;
+}
+.remove-marign{
+	margin:0px;
+}
+.remove-padding{
+	padding:0px;
+}
+.message-time{
+ 	font-size:0.8em;
+ 	color:gray;
+}
+.list-group-item >span{
+	max-width:100%;
+}
+</style>
+<div id='<?$_name?>' >
+	<?$Content?>
+	<?rows?>
+		<?row?>
+		<div class="row remove-margin remove-padding">
+			<div class="col-sm-2 remove-margin remove-padding" >
+				<img src='<?from_member_profile_pic?> Profile Pic <?/from_member_profile_pic?>' width="100%"; height="auto"; />
+			</div>
+			<div class="col-sm-10 remove-margin remove-padding">
+				<div class="row">
+					<div class="col-sm-12 remove-margin remove-padding">
+						<b class="name"><?message_from_member?>name come here<?/message_from_member?></b>
+						<div class="list-group" style="margin-left:1%;">
+							<div class="list-group-item" style="max-width:100%;">	
+								<small><?message?>message<?/message?></small>
+								<div class="text-right message-time" style="margin-bottom:0%;">
+									<?send_on?><?/send_on?>
+								</div>
+							</div>
+						</div>	
+					</div>	
+				</div>
+			</div>
+		</div>	
+		<?/row?>
+	<?/rows?>
+
+  			<?see_all?>
+				<button onclick="$(this).univ().redirect('index.php?epan=web\x26subpage=xsocial-messages')">See All</button>
+			<?/see_all?>
+		
+	<?text_message?>
+			<div><?form?><?/form?></div>
+	<?/text_message?>		
+	
+	</div>
+
+
+

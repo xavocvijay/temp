@@ -1,0 +1,32 @@
+<style>
+	.uploded-photo{
+		width:32%;
+		height:auto;
+		min-height:78px;
+		max-width:78px;
+		float:left;
+		background-color:white; 
+		background-size: 100% auto;
+		overflow: hidden;
+		background-repeat:no-repeat;
+		margin:0.1em;
+	}
+</style>
+
+<div id='<?$_name?>'>
+	<?$Content?>
+	<div class="panel panel-primary">
+  		<div class="panel-heading">
+    		<h3 class="panel-title"><a href='index.php?epan=web&subpage=xsocial-photos' target='_blank'>Photos </a><span class="badge badge-info"><?$count?></span>
+    		</h3>
+  		</div>	
+ 		<div class="panel-body">
+			<?rows?>
+				<?row?>
+				<div class="uploded-photo thumbnail" style="background-image:url('<?img?>  <?/img?>');">
+				</div>
+				<?/row?>
+			<?/rows?>			
+  		</div>
+	</div>
+</div>
